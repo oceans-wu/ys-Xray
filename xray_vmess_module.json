@@ -1,0 +1,55 @@
+{
+    "log": {
+        "loglevel": "info",
+        "access": "/var/log/xray/access.log",
+        "error": "/var/log/xray/error.log"
+    },
+    "inbounds": [
+        {
+            "port": 44330, 
+            "protocol": "vmess",
+            "settings": {
+                "clients": [
+                    {
+                        "id": "a61a533e-59d2-4743-9d17-330f05d072d8", 
+                        "level": 0,
+                         "alterId": 0
+                             
+                    }
+                ],
+                  "default": {
+                    "level": 0,
+                    "alterId": 0
+                 },
+                  "detour": {
+                    "to": "tag_to_detour"
+                  },
+                   "disableInsecureEncryption": false
+            },
+            "streamSettings": {
+                "network": "tcp",
+                "security": "tls",
+                "tlsSettings": {
+                    "alpn": [
+                        "h2",
+                        "http/1.1"
+                    ],
+                    "certificates": [
+                        {
+                            "certificateFile": "/data/server.crt",
+                            "keyFile": "/data/server.key" 
+                        }
+                    ]
+                }
+            }
+        }
+
+
+    ],
+    "outbounds": [
+        {
+            "protocol": "freedom"
+        }
+    ]
+}
+

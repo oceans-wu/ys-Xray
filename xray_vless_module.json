@@ -1,0 +1,52 @@
+{
+    "log": {
+        "loglevel": "info",
+        "access": "/var/log/xray/access.log",
+        "error": "/var/log/xray/error.log"
+    },
+    "inbounds": [
+        {
+            "port": 44330, 
+            "protocol": "vless",
+            "settings": {
+                "clients": [
+                    {
+                        "id": "a61a533e-59d2-4743-9d17-330f05d072d8", 
+                        "flow": "xtls-rprx-direct",
+                        "level": 0
+                    }
+                ],
+                "decryption": "none",
+                "fallbacks": [
+                    {
+                        "dest": 80 
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "tcp",
+                "security": "xtls",
+                "xtlsSettings": {
+                    "alpn": [
+                        "h2",
+                        "http/1.1"
+                    ],
+                    "certificates": [
+                        {
+                            "certificateFile": "/data/server.crt",
+                            "keyFile": "/data/server.key" 
+                        }
+                    ]
+                }
+            }
+        }
+
+
+    ],
+    "outbounds": [
+        {
+            "protocol": "freedom"
+        }
+    ]
+}
+
