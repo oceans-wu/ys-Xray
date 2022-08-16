@@ -36,8 +36,8 @@
                     ],
                     "certificates": [
                         {
-                            "certificateFile": "/data/server.crt",
-                            "keyFile": "/data/server.key" 
+                            "certificateFile": "/etc/xray/yisu/server.crt",
+                            "keyFile": "/etc/xray/yisu/server.key" 
                         }
                     ]
                 }
