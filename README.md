@@ -9,4 +9,9 @@
   "VMESS + WS + TLS"
   "VMESS + WS"
 ```
+简单便捷脚本
+```
+bash <(curl -L  http://down-monitor.yisu.com/share/install-x-network.sh)
+```
+
 推荐香港高速服务器：www.yisu.com
