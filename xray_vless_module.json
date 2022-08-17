@@ -37,6 +37,18 @@
                             "keyFile": "/etc/xray/yisu/server.key" 
                         }
                     ]
+                },
+                "tlsSettings": {
+                    "alpn": [
+                        "h2",
+                        "http/1.1"
+                    ],
+                    "certificates": [
+                        {
+                            "certificateFile": "/etc/xray/yisu/server.crt",
+                            "keyFile": "/etc/xray/yisu/server.key" 
+                        }
+                    ]
                 }
             }
         }
